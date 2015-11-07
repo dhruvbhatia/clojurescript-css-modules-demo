@@ -1,0 +1,20 @@
+@import 'common.css';
+
+:root {
+  --logo-size: 200px;
+}
+
+.container {
+  background-color: var(--primary-colour);
+}
+
+.logo {
+  height: var(--logo-size);
+  width: var(--logo-size);
+  background-color: var(--secondary-colour);
+}
+
+.site-name {
+  composes: heading from 'common.css';
+  background-color: #0b97c4;
+}

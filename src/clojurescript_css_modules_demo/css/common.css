@@ -1,0 +1,8 @@
+:root {
+  --primary-colour: #BBCFE7;
+  --secondary-colour: #e7df72;
+}
+
+.heading {
+  font-size: 2em;
+}
