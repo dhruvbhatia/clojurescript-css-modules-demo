@@ -1,0 +1,19 @@
+._common__heading {
+  font-size: 2em;
+}._header__heading {
+  font-size: 2em;
+}
+
+._header__container {
+  background-color: #BBCFE7;
+}
+
+._header__logo {
+  height: 200px;
+  width: 200px;
+  background-color: #e7df72;
+}
+
+._header__site-name {
+  background-color: #0b97c4;
+}
