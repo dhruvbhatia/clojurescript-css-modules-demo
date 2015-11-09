@@ -1,6 +1,6 @@
 # clojurescript-css-modules-demo
 
-A demo CLJS project with live-reloadable [http://glenmaddern.com/articles/css-modules](CSS Modules) using Gulp & Figwheel.
+A demo CLJS project with live-reloadable [CSS Modules](http://glenmaddern.com/articles/css-modules) using Gulp & Figwheel.
 
 ## How
 Clone, `npm install` and `gulp watch` in one REPL.
