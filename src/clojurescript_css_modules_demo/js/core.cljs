@@ -13,12 +13,12 @@
   "Helper fn that takes Reagent's hiccup syntax and replaces .CSS>x classes with their respective CSS module name(s). See usage in header below."
   [i]
   (let [stringified (str i)
-        class-lookup (re-find #"(?:CSS>)[^\s]+" stringified)
+        class-lookup (re-find #"(?:CSS>)[^\s][a-zA-Z>-]+" stringified)
         tree (rest (string/split class-lookup #">"))
         class-names (apply aget (js* "cssModules") tree)
         joined-class-names (string/replace-all class-names #" " ".")
-        output (reader/read-string (string/replace-first stringified #"(?:CSS>)[^\s]+" joined-class-names))
-        finished? (nil? (re-find #"(?:CSS>)[^\s]+" (str output)))]
+        output (reader/read-string (string/replace-first stringified #"(?:CSS>)[^\s][a-zA-Z>-]+" joined-class-names))
+        finished? (nil? (re-find #"(?:CSS>)[^\s][a-zA-Z>-]+" (str output)))]
 
     (if finished?
       output
