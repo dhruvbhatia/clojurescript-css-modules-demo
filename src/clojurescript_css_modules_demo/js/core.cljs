@@ -15,11 +15,10 @@
   (let [stringified (str i)
         class-lookup (re-find #"(?:CSS>)[^\s][a-zA-Z>-]+" stringified)
         tree (rest (string/split class-lookup #">"))
-        class-names (apply aget (js* "cssModules") tree)
+        class-names (or (apply aget (js* "cssModules") tree) ".")
         joined-class-names (string/replace-all class-names #" " ".")
         output (reader/read-string (string/replace-first stringified #"(?:CSS>)[^\s][a-zA-Z>-]+" joined-class-names))
         finished? (nil? (re-find #"(?:CSS>)[^\s][a-zA-Z>-]+" (str output)))]
-
     (if finished?
       output
       (recur output))))
