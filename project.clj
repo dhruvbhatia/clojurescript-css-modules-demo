@@ -1,6 +1,6 @@
-(defproject clojurescript-css-modules-demo "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
+(defproject clojurescript-css-modules-demo "0.1.1-SNAPSHOT"
+  :description "Simple ClojureScript with CSS modules Demo"
+  :url "https://github.com/dhruvbhatia/clojurescript-css-modules-demo"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
