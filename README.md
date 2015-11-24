@@ -31,7 +31,7 @@ There is a pretty syntax sugar inside demo:
 		[:div.CSS>filename>logo]))
 ```
 
-Which is equivalent to code below. Or you can use macro `defcomponent` which wraps your component function with `get-css`.
+Which is equivalent to code above. Or you can use macro `defcomponent` which wraps your component function with `get-css`.
 
 ```clojure
 (defcomponent my-component[]
