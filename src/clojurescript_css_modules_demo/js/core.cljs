@@ -40,16 +40,17 @@
       [:article.CSS>body>article
         [:p ".article from body.css"]]
 
-      [:div.CSS>body>footer ".footer from header.css"]]]
+      [:div.CSS>body>footer ".footer from header.css"]]
     )
 
-(defcomponent root []
-  [header]
-  [body]
+(defcomponent root [] 
+  [:div 
+    [header]
+    [body]]
   )
 
 (defn mount-root []
-  (r/render [css-header]
+  (r/render [root]
             (.getElementById js/document "app")))
 
 (defn ^:export init []

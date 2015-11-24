@@ -1,0 +1,16 @@
+@import 'common.css';
+
+.container {
+  width: 768px;
+  background-color: beige;
+  margin: 0 auto;
+  font-family: var(--font);
+}
+
+.article {
+  color: dark-blue;
+}
+
+.footer {
+  font-size: 10px;
+}
