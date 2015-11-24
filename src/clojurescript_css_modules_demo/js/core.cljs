@@ -1,35 +1,13 @@
 (ns ^:figwheel-always clojurescript-css-modules-demo.js.core
   (:require [cssModules]
             [reagent.core :as r]
-            [clojure.string :as string]
-            [cljs.reader :as reader]
-            [clojure.walk :refer [prewalk]]
-            ))
+            [clojurescript-css-modules-demo.css :as css :refer [get-css]]
+            )
+  (:require-macros [clojurescript-css-modules-demo.macros :refer [defcomponent]]))
 
 (enable-console-print!)
 
 (println "CSS Modules:" js/cssModules)
-
-(defn ^:private populate-css-module-classes [e]
-  (prewalk (fn [x]
-             (let [key (if (keyword? x) (str (name x)))
-                   class-lookup (if (some? key) (re-find #"(?:CSS>)[^\s][a-zA-Z>-]+" key))
-                   tree (if (some? key) (rest (string/split class-lookup #">")))
-                   class-names (or (if (not (empty? tree)) (apply aget (js* "cssModules") tree)) ".")
-                   joined-class-names (string/replace-all class-names #" " ".")
-                   new-key (if (some? key) (keyword (string/replace-first key #"(?:CSS>)[^\s][a-zA-Z>-]+" joined-class-names)))
-                   ]
-
-               (if (some? key) new-key x)
-               )
-             ) e)
-  )
-
-(defn get-css
-  "Helper fn that takes Reagent's hiccup syntax and replaces .CSS>x classes with their respective CSS module name(s). See usage in header below."
-  [v]
-  (into [] (map #(populate-css-module-classes %) v))
-  )
 
 (defn header []
   (get-css
@@ -53,8 +31,25 @@
     )
   )
 
+;; alternatively, you can use macros from macros namespace which 
+;; wraps your component function with get-css function
+(defcomponent body []
+    [:div.CSS>body>container
+      [:h1 ".container from body.css"]
+
+      [:article.CSS>body>article
+        [:p ".article from body.css"]]
+
+      [:div.CSS>body>footer ".footer from header.css"]]]
+    )
+
+(defcomponent root []
+  [header]
+  [body]
+  )
+
 (defn mount-root []
-  (r/render [header]
+  (r/render [css-header]
             (.getElementById js/document "app")))
 
 (defn ^:export init []

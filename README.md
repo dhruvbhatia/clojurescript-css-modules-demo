@@ -21,6 +21,23 @@ For example: in `filename.css` we get CSS rule with selector `.logo`:
 	[:div { :class-name (aget js/cssModules "filename" "logo") }])
 ```
 
+#### Syntax Sugar
+
+There is a pretty syntax sugar inside demo:
+
+```
+(defn my-component[]
+	(get-css 
+		[:div.CSS>filename>logo]))
+```
+
+Which is equivalent to code below. Or you can use macro `defcomponent` which wraps your component function with `get-css`.
+
+```
+(defcomponent my-component[]
+	[:div.CSS>filename>logo])
+```
+
 ##TODO:
 * [ ] Expand on this documentation!
 * [ ] Structure CSS Modules, add advanced examples.

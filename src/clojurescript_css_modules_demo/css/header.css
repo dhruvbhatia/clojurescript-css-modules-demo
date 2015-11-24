@@ -6,15 +6,18 @@
 
 .container {
   background-color: var(--primary-colour);
+  font: var(--font);
 }
 
 .logo {
   height: var(--logo-size);
   width: var(--logo-size);
   background-color: var(--secondary-colour);
+  font: var(--font);
 }
 
 .site-name {
   composes: heading from 'common.css';
   background-color: #0b97c4;
+  font: var(--font);
 }
