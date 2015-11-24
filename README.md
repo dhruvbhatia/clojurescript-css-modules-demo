@@ -25,7 +25,7 @@ For example: in `filename.css` we get CSS rule with selector `.logo`:
 
 There is a pretty syntax sugar inside demo:
 
-```
+```clojure
 (defn my-component[]
 	(get-css 
 		[:div.CSS>filename>logo]))
@@ -33,7 +33,7 @@ There is a pretty syntax sugar inside demo:
 
 Which is equivalent to code below. Or you can use macro `defcomponent` which wraps your component function with `get-css`.
 
-```
+```clojure
 (defcomponent my-component[]
 	[:div.CSS>filename>logo])
 ```
