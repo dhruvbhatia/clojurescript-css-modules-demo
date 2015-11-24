@@ -1,7 +1,7 @@
 (ns ^:figwheel-always clojurescript-css-modules-demo.js.core
   (:require [cssModules]
             [reagent.core :as r]
-            [clojurescript-css-modules-demo.css :as css :refer [get-css]]
+            [clojurescript-css-modules-demo.js.css :as css :refer [get-css]]
             )
   (:require-macros [clojurescript-css-modules-demo.macros :refer [defcomponent]]))
 
@@ -35,10 +35,10 @@
 ;; wraps your component function with get-css function
 (defcomponent body []
     [:div.CSS>body>container
-      [:h1 ".container from body.css"]
+      [:h1 "H1 in div .container from body.css"]
 
       [:article.CSS>body>article
-        [:p ".article from body.css"]]
+        [:p "p in article with .article from body.css"]]
 
       [:div.CSS>body>footer ".footer from header.css"]]
     )

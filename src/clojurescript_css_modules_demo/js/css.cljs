@@ -1,4 +1,4 @@
-(ns ^:figwheel-always clojurescript-css-modules-demo.css
+(ns clojurescript-css-modules-demo.js.css
   (:require [cssModules]
             [clojure.string :as string]
             [cljs.reader :as reader]
