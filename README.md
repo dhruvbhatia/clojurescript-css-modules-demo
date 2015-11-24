@@ -16,7 +16,7 @@ At first - import CSS modules to project with foreign-libs. After it you can use
 
 For example: in `filename.css` we get CSS rule with selector `.logo`:
 
-```
+```clojure
 (defn my-component[]
 	[:div { :class-name (aget js/cssModules "filename" "logo") }])
 ```
