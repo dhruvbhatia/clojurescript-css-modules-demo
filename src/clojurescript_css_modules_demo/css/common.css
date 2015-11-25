@@ -1,6 +1,7 @@
 :root {
   --primary-colour: #BBCFE7;
   --secondary-colour: #e7df72;
+  --font: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .heading {
