@@ -26,6 +26,7 @@
      [:div.CSS>header>site-name
       ;{:class-name (aget js/cssModules "header" "site-name")}
       [:p ".site-name from header.css"]
+      [:small "Note how this div automatically pulls in and applies dependant CSS class names using only the 'div.CSS>header>site-name' syntax. Try changing .header in common.css and this will also update."]
       ]
 
      ]

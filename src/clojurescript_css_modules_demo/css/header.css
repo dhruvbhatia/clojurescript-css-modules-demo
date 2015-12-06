@@ -1,18 +1,24 @@
 @import 'common.css';
 
 :root {
-  --logo-size: 200px;
+  --logo-width: 600px;
+  --logo-height: 250px;
 }
 
 .container {
   background-color: var(--primary-colour);
   font-family: var(--font);
+  display: inline-block;
+  width: 100%;
 }
 
 .logo {
-  height: var(--logo-size);
-  width: var(--logo-size);
+  height: var(--logo-height);
+  width: var(--logo-width);
   background-color: var(--secondary-colour);
+  background-image: url('/img/logo.png');
+  background-repeat: no-repeat;
+  float: left;
 }
 
 .site-name {

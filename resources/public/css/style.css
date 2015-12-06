@@ -15,8 +15,7 @@
 
 ._body__footer {
   font-size: 10px;
-}
-._common__heading {
+}._common__heading {
   font-size: 2em;
 }._header__heading {
   font-size: 2em;
@@ -25,12 +24,17 @@
 ._header__container {
   background-color: #BBCFE7;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  display: inline-block;
+  width: 100%;
 }
 
 ._header__logo {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 600px;
   background-color: #e7df72;
+  background-image: url('/img/logo.png');
+  background-repeat: no-repeat;
+  float: left;
 }
 
 ._header__site-name {
