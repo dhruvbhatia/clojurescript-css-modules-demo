@@ -1,13 +1,24 @@
-# clojurescript-css-modules-demo
+# CSS Modules in ClojureScript
 
-A sample Clojurescript project with live-reloadable [CSS Modules](http://glenmaddern.com/articles/css-modules) using Gulp & Figwheel.
+A sample ClojureScript project showcasing a workflow with live-reloadable [CSS Modules](http://glenmaddern.com/articles/css-modules) using Gulp & Figwheel.
 
-## How
+## How It Works
+
+The basic premise is as follows:
+
+1. A Gulp task watches and compiles your CSS Modules to JS.
+    * *Note: CSS Module namespaces to be exported are defined in `src/clojurescript_css_modules_demo/css/settings.js`.*
+2. This JS file is hooked into your CLJS app through a `foreign-lib` named `cssModules`.
+3. Figwheel reloads your project whenever it detects changes to `cssModules`.
+4. This module is exposed to your CLJS project, allowing you to easily access the class names of your CSS Modules.
+    * *Note: a helper macro is provided for use with Reagent's hiccup-style syntax, but you can use this flow with any CLJS project.*
+
+## Installation
 Clone, `npm install` and `gulp watch` in one REPL.
 `lein figwheel` in another REPL.
-Change your .css modules and notice how CLJS live reloads.
+Change your .css modules within `src/css/` and notice how Gulp/Figwheel live reload your project.
 
-Note: change `css/settings.js` to reflect your CSS Module names.
+Note: Remember to change `css/settings.js` if you add additional CSS Module namespaces.
 
 
 ## Usage With Reagent
@@ -38,6 +49,9 @@ Which is equivalent to code above. Or you can use macro `defcomponent` which wra
 	[:div.CSS>filename>logo])
 ```
 
-##TODO:
+## TODO:
 * [ ] Expand on this documentation!
 * [ ] Structure CSS Modules, add advanced examples.
+* [ ] Explore making this a standalone Clojure plugin (thereby removing the NodeJS/Gulp dependency).
+
+Contributions welcome!
