@@ -7,6 +7,7 @@
 
 (enable-console-print!)
 
+; print all included css modules to console - anything exported from css/settings.js will be available here
 (println "CSS Modules:" js/cssModules)
 
 (defn header []

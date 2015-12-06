@@ -6,9 +6,9 @@
 
 (enable-console-print!)
 
-(println "CSS Modules:" js/cssModules)
-
-(defn ^:private populate-css-module-classes [e]
+(defn ^:private populate-css-module-classes
+  "Walks through an element within Reagent's hiccup-style syntax to replace our CSS module syntax with the actual CSS class name(s) from the exposed cssModules foreign-lib."
+  [e]
   (prewalk (fn [x]
              (let [key (if (keyword? x) (str (name x)))
                    class-lookup (if (some? key) (re-find #"(?:CSS>)[^\s][a-zA-Z>-]+" key))
@@ -24,7 +24,8 @@
   )
 
 (defn get-css
-  "Helper fn that takes Reagent's hiccup syntax and replaces .CSS>x classes with their respective CSS module name(s). See usage in header below."
+  "Helper fn that takes Reagent's hiccup syntax and replaces .CSS>x classes with their respective CSS module name(s).
+  Reagent components can either be wrapped with this function, or you can use the defcomponent macro for cleaner syntax."
   [v]
   (into [] (map #(populate-css-module-classes %) v))
   )
