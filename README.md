@@ -1,5 +1,7 @@
 # CSS Modules in ClojureScript
 
+![](./logo.png)
+
 A sample ClojureScript project showcasing a workflow with live-reloadable [CSS Modules](http://glenmaddern.com/articles/css-modules) using Gulp & Figwheel.
 
 ## How It Works
