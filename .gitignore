@@ -12,4 +12,6 @@ pom.xml
 .repl
 .nrepl-port
 .idea
+/resources/public/css
+/resources/public/js
 node_modules
