@@ -1,4 +1,21 @@
-._common__heading {
+._body__heading {
+  font-size: 2em;
+}
+
+._body__container {
+  width: 768px;
+  background-color: beige;
+  margin: 0 auto;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+._body__article {
+  color: dark-blue;
+}
+
+._body__footer {
+  font-size: 10px;
+}._common__heading {
   font-size: 2em;
 }._header__heading {
   font-size: 2em;
@@ -22,21 +39,4 @@
 
 ._header__site-name {
   background-color: #0b97c4;
-}._body__heading {
-  font-size: 2em;
-}
-
-._body__container {
-  width: 768px;
-  background-color: beige;
-  margin: 0 auto;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-
-._body__article {
-  color: dark-blue;
-}
-
-._body__footer {
-  font-size: 10px;
 }
